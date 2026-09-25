@@ -1,2 +1,11 @@
-# Pr-ctica-1---Desarrollo-colaborativo-con-Git-y-GitHub
-Tarea de github.
+# Gestor de tareas
+
+Proyecto de ejemplo para practicar un flujo de trabajo colaborativo con Git y GitHub.
+
+## Estado del proyecto
+
+Proyecto en desarrollo.
+
+## Ejecución
+
+Abre `index.html` en un navegador moderno. Si el navegador bloquea módulos ES al abrir archivos locales, ejecuta un servidor web sencillo desde la carpeta del proyecto, por ejemplo con la extensión Live Server de VS Code.
