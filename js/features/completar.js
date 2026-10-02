@@ -1,9 +1,22 @@
 import { toggleTarea } from "../store.js";
 
 export function activarCompletar(render) {
-  // TODO feature/completar-tarea
-  // 1. Escuchar clics en #task-list usando delegación de eventos.
-  // 2. Comprobar que el botón tenga data-action="complete".
-  // 3. Obtener el id numérico del <li data-id="...">.
-  // 4. Llamar a toggleTarea(id) y después a render().
+  const lista = document.querySelector("#task-list");
+
+  if (!lista) return;
+
+  lista.addEventListener("click", (event) => {
+    const boton = event.target.closest("button");
+
+    if (!boton || boton.dataset.action !== "complete") return;
+
+    const tarea = boton.closest("li[data-id]");
+    if (!tarea) return;
+
+    const id = Number(tarea.dataset.id);
+    if (Number.isNaN(id)) return;
+
+    toggleTarea(id);
+    render();
+  });
 }
