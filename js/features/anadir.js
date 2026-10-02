@@ -1,10 +1,19 @@
 import { addTarea } from "../store.js";
 
 export function activarAnadir(render) {
-  // TODO feature/anadir-tarea
-  // 1. Escuchar el evento submit del formulario #task-form.
-  // 2. Leer y limpiar (trim) el valor de #task-input.
-  // 3. No permitir tareas vacías.
-  // 4. Llamar a addTarea(texto).
-  // 5. Vaciar el input y llamar a render().
+  const form = document.querySelector("#task-form");
+  const input = document.querySelector("#task-input");
+
+  if (!form || !input) return;
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const texto = input.value.trim();
+    if (!texto) return;
+
+    addTarea(texto);
+    input.value = "";
+    render();
+  });
 }
