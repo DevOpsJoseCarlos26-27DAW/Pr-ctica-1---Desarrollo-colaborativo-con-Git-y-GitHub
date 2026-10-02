@@ -4,7 +4,7 @@ Proyecto de ejemplo para practicar un flujo de trabajo colaborativo con Git y Gi
 
 ## Estado del proyecto
 
-Funcionalidades añadir y eliminar implementadas.
+Funcionalidades añadir , eliminar y completar implementadas.
 
 ## Ejecución
 
