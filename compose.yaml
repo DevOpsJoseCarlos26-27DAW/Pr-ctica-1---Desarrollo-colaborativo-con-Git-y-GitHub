@@ -1,0 +1,7 @@
+# Primera fase: este archivo inicia solamente el servicio web.
+# TODO: añadir un segundo servicio llamado proxy cuando lo pida el enunciado.
+services:
+  web:
+    build: .
+    image: gestor-tareas:2.0
+    restart: unless-stopped
