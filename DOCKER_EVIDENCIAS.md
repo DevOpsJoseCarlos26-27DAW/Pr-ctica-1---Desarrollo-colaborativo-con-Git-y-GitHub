@@ -38,7 +38,7 @@
 fb8590e9641f   nginx:stable-alpine   "/docker-entrypoint.…"   2 minutes ago   Up 2 minutes   127.0.0.1:8081->80/tcp   nginx-prueba
 
 - [ ] Se ha detenido, iniciado y eliminado el contenedor.
-    ![alt text](.images/Cap2.png)
+    ![alt text](.images/cap2.png)
 
 **¿Qué significa `8081:80`?**
 Este parametro aparece en el docker run. Sirve para indicar al contenedor por donde queremos que lanze su sevicion en la maquina anfitriona. Por ejemplo, 8081 hace referencia a el puerto de nuestra maquina. Mientras que el 80 hace referencia a el puerto del servicio original.
@@ -46,12 +46,22 @@ Este parametro aparece en el docker run. Sirve para indicar al contenedor por do
 ## 2. Nuestra imagen
 
 - [ ] Imagen construida con `docker build`.
+![alt text](.images/cap3.png)
 - [ ] Aplicación accesible en `http://localhost:8080`.
+![alt text](.images/cap4.png)
 - [ ] Cambio visual comprobado tras reconstruir y recrear el contenedor.
+![alt text](.images/cap5.png)
 
-**Comandos y resultados:** TODO
+**Comandos y resultados:** 
+Se ejecutan los comandos: 
+docker stop gestor-tareas
+docker rm gestor-tareas
+docker run -d --name gestor-tareas -p 127.0.0.1:8080:80 gestor-tareas:2.0
+para detener y volver a iniciar el contenedor gestor-tareas tras realizar cambios sobre el html. Como resultado tras reiniciar el contenedor, la aplicación es la misma y no se perciben
+los cambios.
 
-**¿Por qué el contenedor antiguo no cambia al reconstruir la imagen?** TODO
+**¿Por qué el contenedor antiguo no cambia al reconstruir la imagen?** 
+Porque, aunque aunque se haya recargado el contenedor, se está cargando una imagen antigua en la que los cambios no están presentes.
 
 ## 3. Persistencia de datos
 
