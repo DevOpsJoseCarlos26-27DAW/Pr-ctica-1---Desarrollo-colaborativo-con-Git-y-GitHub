@@ -69,9 +69,23 @@ Porque, aunque aunque se haya recargado el contenedor, se está cargando una ima
 - [ ] Un contenedor escribe un archivo en el volumen.
 - [ ] Otro contenedor recupera el archivo tras eliminar el primero.
 
-**Comandos y resultado:** TODO
+**Comandos y resultado:**
+docker volume create datos-devops
+docker volume ls
+DRIVER    VOLUME NAME
+local     41cd7fbda1b42045816bcf9eddbdd2849fa01870d04e64d16697eb9118e8e818
+local     02692e1217d6e93abec5e09286eb873e05395e5a0a1d4716027200a809a55a1a
+local     datos-devops
+local     portainer_data
 
-**¿Qué relación tiene esto con las bases de datos?** TODO
+docker run --rm -v datos-devops:/datos gestor-tareas:2.0 sh -c "echo datospersistentes > /datos/prueba.txt"
+docker run --rm -v datos-devops:/datos gestor-tareas:2.0 cat /datos/prueba.txt
+datospersistentes
+
+
+**¿Qué relación tiene esto con las bases de datos?** 
+QUe sin volumen, cuando ejecutas una base de datos, los datos se guardan en el propio contenedor; y si este se destruye, se peirden los datos. En cambio con un volumen, los datos se guardan en el disco,asi que aunque se borre el contenedor, los datos se quedan gaurdados.
+
 
 ## 4. Docker Compose
 
