@@ -1,8 +1,8 @@
 # Evidencias grupales · Práctica 2 Docker
 
-**Equipo:** TODO  
-**Integrantes:** TODO  
-**Fecha:** TODO
+**Equipo:** Mesa 2(No somos muy creativos)
+**Integrantes:** Adrian Alamo Diaz, Hari Sebastian Riaño Almeida, Jesús Cotera Rodríguez
+**Fecha:** 27/11/2026
 
 > No hace falta una captura por comando. Bastan resultados breves y explicaciones comprensibles. Las evidencias son del **equipo**.
 
@@ -128,4 +128,5 @@ resulven el nombre de dominio de estos dentro de la red.
 
 ## 7. Colaboración
 
-**Enlaces a Pull Requests relevantes:** TODO
+**Enlaces a Pull Requests relevantes:** 
+-https://github.com/DevOpsJoseCarlos26-27DAW/Pr-ctica-1---Desarrollo-colaborativo-con-Git-y-GitHub/pull/7
