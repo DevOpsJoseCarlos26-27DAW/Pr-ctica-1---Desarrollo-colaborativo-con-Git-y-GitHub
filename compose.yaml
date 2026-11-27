@@ -1,0 +1,16 @@
+# Primera fase: este archivo inicia solamente el servicio web.
+# TODO: añadir un segundo servicio llamado proxy cuando lo pida el enunciado.
+services:
+  web:
+    build: .
+    image: gestor-tareas:2.0
+    restart: unless-stopped
+  proxy:
+    image: nginx:stable-alpine
+    ports:
+    - "8080:80"
+    volumes:
+    - ./proxy/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+    - web
+    restart: unless-stopped
