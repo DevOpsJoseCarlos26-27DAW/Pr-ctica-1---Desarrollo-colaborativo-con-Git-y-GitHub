@@ -7,6 +7,7 @@
 ## Requisitos
 
 - TODO: requisitos necesarios en el ordenador.
+-Docker instalado en el equipo.
 
 ## Ejecutar la aplicación
 
@@ -29,5 +30,4 @@
 - **Comunicación entre servicios**: TODO
 
 ## Posibles problemas
-
-Escribid brevemente un error encontrado y cómo lo habéis solucionado.
+    En caso de tener una vpn activa descativela antes de ejecutar los contenedores.

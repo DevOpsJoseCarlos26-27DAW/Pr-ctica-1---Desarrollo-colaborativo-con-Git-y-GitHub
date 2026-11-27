@@ -94,23 +94,37 @@ QUe sin volumen, cuando ejecutas una base de datos, los datos se guardan en el p
 - [ ] Se ha consultado `docker compose ps`.
 - [ ] Se ha probado la comunicación `proxy` → `web`.
 
-**Comandos y resultado:** TODO
+**Comandos y resultado:**
+![alt text](cap6.png)
+El de la imagen de alpine corresponde al servicio de proxy (proxy)y el de la imagen de gestor de tareaas 2.0 corresponde a la imagen de nuestra aplicacion(web).
+![alt text](cap7.png)
+![alt text](cap8.png)
+Mediante el siguiente comando podemos hacer ping de un contenedor a otro.
+docker exec -it <contenedor_a> ping -c 3 <contenedor_b>.
+Lo que hace el comando es ejecutar en el contenedor a un comando. El comando es un ping a el nombre del contenedor b. Como los contenedores de docker
+resulven el nombre de dominio de estos dentro de la red.
+![alt text](cap9.png)
 
 **¿Por qué el proxy se conecta a `web` por su nombre?** TODO
-
+    Porque dentro de la red de docker contiene un dns nativo de docker que resuelve el nombre de los contenedores. Por lo que utilizando el nombre que le dimos al
+    servicio este es capaz de obtener su direccion ip.
 ## 5. Incidencias
 
-**Incidencia 1 - Puerto ocupado:** qué ocurrió / cómo lo resolvisteis: TODO
+**Incidencia 1 - Puerto ocupado:** 
+-Lo que pasaba es que habia dos contenedores del mismo servicio activos a la vez. Por lo que apuntaban al mismo puerto. Para solucionarlo apagamos uno.
 
-**Incidencia 2 - Imagen no actualizada:** qué ocurrió / cómo lo resolvisteis: TODO
+**Incidencia 2 - Imagen no actualizada:** 
+-Volvimos a hacer la build de la imagen con el proyecto actual para que esta tenga los cambios mas recientes.
 
-**Incidencia 3 - Servicio incorrecto en Nginx:** qué ocurrió / cómo lo resolvisteis: TODO
+**Incidencia 3 - Servicio incorrecto en Nginx:**
+-Cambiamos a donde apunta el servicio del proxy en el archivo de default.conf.
 
 ## 6. Conclusión del equipo
 
-**Dos cosas que hemos aprendido:** TODO
-
-**Una duda o dificultad que hemos tenido:** TODO
+**Dos cosas que hemos aprendido:**
+-Montar imagenes de nuestros proyectos.
+-Generar preconfiguraciones con dockerfile.
+-Desplegar multiples servicios mediante dockercompose
 
 ## 7. Colaboración
 
